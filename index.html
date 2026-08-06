@@ -155,6 +155,20 @@
   }
   .nav-cta-group{ display:flex; align-items:center; gap: 24px; }
 
+  /* NEW OWNERSHIP BANNER — remove the .ownership-banner rule and its HTML block together when no longer needed */
+  .ownership-banner{
+    background: var(--purple-deep);
+    color: var(--cream-soft);
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 10px 16px;
+  }
+  @media (max-width: 600px){
+    .ownership-banner{ font-size: 0.76rem; padding: 8px 12px; }
+  }
+
   @media (max-width: 600px){
     .nav-wrap{ padding: 14px 18px; }
     .logo .mark, .logo .sub{ font-size: 1.05rem; letter-spacing: 0.03em; }
@@ -456,6 +470,9 @@
 </head>
 <body>
 
+<!-- NEW OWNERSHIP BANNER — delete this entire div when no longer needed -->
+<div class="ownership-banner">TLC Accupressure is now under new ownership.</div>
+
 <header>
   <div class="nav-wrap">
     <a href="#top" class="logo">
@@ -479,7 +496,7 @@
       <p class="eyebrow">Woodland, California</p>
       <p class="hero-brand"><span class="b1">TLC</span> <span class="b2">Accupressure</span></p>
       <h1>Massage rooted in <em>tradition</em>, tailored to you.</h1>
-      <p class="lede">Thai, Swedish, deep tissue and combination bodywork from a licensed therapist with over 20 years of experience. Every session is planned around how your body actually feels that day.</p>
+      <p class="lede">Thai, Swedish, deep tissue and combination bodywork from a licensed therapist with over 10 years of experience. Every session is planned around how your body actually feels that day.</p>
       <div class="hero-ctas">
         <a href="#booking" class="btn btn-primary">Book a Session</a>
         <a href="#services" class="btn btn-ghost">See Services &amp; Pricing</a>
@@ -584,12 +601,12 @@
     <div class="container about-grid">
       <div class="about-copy">
         <p class="eyebrow">About Your Therapist</p>
-        <h2>Two decades of hands-on care</h2>
-        <p>I'm a licensed, certified massage therapist trained both in the United States and in Thailand, with more than 20 years in the field. Over that time I've worked across a range of styles and techniques — Swedish, deep tissue, and traditional Thai bodywork among them — and I build each session around what your body needs that day, rather than a fixed routine.</p>
+        <h2>Over a decade of hands-on care</h2>
+        <p>I'm a licensed, certified massage therapist trained both in the United States and in Thailand, with more than 10 years in the field. Over that time I've worked across a range of styles and techniques — Swedish, deep tissue, and traditional Thai bodywork among them — and I build each session around what your body needs that day, rather than a fixed routine.</p>
         <p>If you're carrying everyday stress, chronic fatigue, or muscle aches that just won't ease up, that's exactly what I'm here for. You can expect a calm, respectful, and professional session from start to finish.</p>
 
         <div class="credentials">
-          <div class="credential"><span class="num">20+</span><span class="label">Years Experience</span></div>
+          <div class="credential"><span class="num">10+</span><span class="label">Years Experience</span></div>
           <div class="credential"><span class="num">2</span><span class="label">Countries Trained In</span></div>
         </div>
 
