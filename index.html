@@ -113,10 +113,12 @@
   .btn-gold:hover{ background: var(--brown-teak); }
 
   /* ---------- HEADER ---------- */
-  header{
+  .site-top{
     position: sticky;
     top: 0;
     z-index: 50;
+  }
+  header{
     background: rgba(242,234,217,0.92);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
@@ -470,23 +472,27 @@
 </head>
 <body>
 
-<!-- NEW OWNERSHIP BANNER — delete this entire div when no longer needed -->
-<div class="ownership-banner">TLC Accupressure is now under new ownership.</div>
+<body>
 
-<header>
-  <div class="nav-wrap">
-    <a href="#top" class="logo">
-      <span class="mark">TLC</span>
-      <span class="sub">ACCUPRESSURE</span>
-    </a>
-    <div class="nav-cta-group">
-      <a href="tel:5309089329" class="nav-phone">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 005 5L14 13l5 2v4a2 2 0 01-2 2C9.6 21 3 14.4 3 6a2 2 0 011-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-        <span class="phone-text">530-908-9329</span>
+<div class="site-top">
+  <!-- NEW OWNERSHIP BANNER — delete this entire div when no longer needed -->
+  <div class="ownership-banner">TLC ACCUPRESSURE is now under new ownership.</div>
+
+  <header>
+    <div class="nav-wrap">
+      <a href="#top" class="logo">
+        <span class="mark">TLC</span>
+        <span class="sub">ACCUPRESSURE</span>
       </a>
+      <div class="nav-cta-group">
+        <a href="tel:5309089329" class="nav-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 005 5L14 13l5 2v4a2 2 0 01-2 2C9.6 21 3 14.4 3 6a2 2 0 011-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <span class="phone-text">530-908-9329</span>
+        </a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
+</div>
 
 <main id="top">
 
