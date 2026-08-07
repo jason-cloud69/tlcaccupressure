@@ -383,6 +383,36 @@
     padding-left: 16px;
   }
 
+  /* ---------- POLICIES ---------- */
+  .policy-block{
+    background: var(--cream-soft);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--purple-deep);
+    border-radius: 8px;
+    padding: 30px 32px;
+    max-width: 760px;
+    margin: 0 auto 28px;
+    box-shadow: var(--shadow);
+  }
+  .policy-block h3{ font-size: 1.15rem; margin-bottom: 10px; }
+  .policy-block p{ color: var(--graphite); font-size: 0.98rem; }
+  .policy-notes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  @media (max-width: 720px){ .policy-notes{ grid-template-columns: 1fr; } }
+  .policy-note{
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 0.92rem;
+    color: var(--brown-teak);
+  }
+  .policy-note svg{ flex-shrink: 0; margin-top: 3px; }
+
   /* ---------- PAYMENT ---------- */
   .payment-band{
     display: flex;
@@ -501,7 +531,7 @@
     <div class="container hero-grid">
       <p class="eyebrow">Woodland, California</p>
       <p class="hero-brand"><span class="b1">TLC</span> <span class="b2">Accupressure</span></p>
-      <h1>Massage rooted in <em>tradition</em>, tailored to you.</h1>
+      <h1>Therapeutic massage rooted in <em>tradition</em>, tailored to you.</h1>
       <p class="lede">Thai, Swedish, deep tissue and combination bodywork from a licensed therapist with over 10 years of experience. Every session is planned around how your body actually feels that day.</p>
       <div class="hero-ctas">
         <a href="#booking" class="btn btn-primary">Book a Session</a>
@@ -609,7 +639,7 @@
         <p class="eyebrow">About Your Therapist</p>
         <h2>Over a decade of hands-on care</h2>
         <p>I'm a licensed, certified massage therapist trained both in the United States and in Thailand, with more than 10 years in the field. Over that time I've worked across a range of styles and techniques — Swedish, deep tissue, and traditional Thai bodywork among them — and I build each session around what your body needs that day, rather than a fixed routine.</p>
-        <p>If you're carrying everyday stress, chronic fatigue, or muscle aches that just won't ease up, that's exactly what I'm here for. You can expect a calm, respectful, and professional session from start to finish.</p>
+        <p>If you're carrying everyday stress, chronic fatigue, or muscle aches that just won't ease up, that's exactly what I'm here for. You can expect a calm, respectful, and professional therapeutic session from start to finish.</p>
 
         <div class="credentials">
           <div class="credential"><span class="num">10+</span><span class="label">Years Experience</span></div>
@@ -617,6 +647,30 @@
         </div>
 
         <p class="about-note">I'm thoughtful about the products I use during a session and happy to talk through what's on hand if you have any preferences or sensitivities — just let me know before we begin.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POLICIES -->
+  <section id="policies">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Studio Policies</p>
+        <h2>What to expect at your session</h2>
+      </div>
+      <div class="policy-block">
+        <h3>Professional Massage Policy</h3>
+        <p>TLC ACCUPRESSURE provides licensed, therapeutic massage only. This is a professional service — requests for sexual services, inappropriate comments, gestures, or behavior are not tolerated and will result in immediate termination of the session. Full payment remains due, and future appointments may be declined.</p>
+      </div>
+      <div class="policy-notes">
+        <div class="policy-note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="#4B2E55" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span>Clients are professionally draped throughout the session — only the area being worked on is uncovered at any time.</span>
+        </div>
+        <div class="policy-note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4B2E55" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="#4B2E55" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span>Please give at least 3 hours' notice to cancel or reschedule. Repeated no-shows or late cancellations may require prepayment for future bookings.</span>
+        </div>
       </div>
     </div>
   </section>
