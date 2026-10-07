@@ -239,7 +239,18 @@
     font-weight: 500;
   }
     .hero-badge svg{ flex-shrink:0; }
-  .hours-stack{ text-align: left; line-height: 1.5; }
+    .hours-stack{ text-align: left; line-height: 1.5; }
+  .hero-badge{ align-items: flex-start; }
+  .hero-badge svg{ margin-top: 2px; }
+  @media (max-width: 600px){
+    .hero-badges{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
 
   /* section divider motif */
   .divider{
