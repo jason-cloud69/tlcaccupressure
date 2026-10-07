@@ -239,7 +239,13 @@
     font-weight: 500;
   }
     .hero-badge svg{ flex-shrink:0; }
-    .hours-stack{ text-align: left; line-height: 1.5; }
+      .hours-stack{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 16px;
+    text-align: left;
+    line-height: 1.5;
+  }
   .hero-badge{ align-items: flex-start; }
   .hero-badge svg{ margin-top: 2px; }
   @media (max-width: 600px){
@@ -568,7 +574,7 @@
       <div class="hero-badges">
         <span class="hero-badge">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#4B2E55" stroke-width="1.4"/><path d="M8 4v4l2.5 2" stroke="#4B2E55" stroke-width="1.4" stroke-linecap="round"/></svg>
-          <span class="hours-stack">Monday – Saturday: 10:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 7:00 PM</span>
+          <span class="hours-stack"><span>Monday – Saturday</span><span>10:00 AM – 8:00 PM</span><span>Sunday</span><span>10:00 AM – 7:00 PM</span></span>
         </span>
         <span class="hero-badge">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8.5l4 4 8-9" stroke="#4B2E55" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -814,7 +820,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 TLC Accupressure. All rights reserved.</span>
-      <span>Monday – Saturday: 10:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 7:00 PM</span>
+      <span class="hours-stack"><span>Monday – Saturday</span><span>10:00 AM – 8:00 PM</span><span>Sunday</span><span>10:00 AM – 7:00 PM</span></span>
     </div>
   </div>
 </footer>
