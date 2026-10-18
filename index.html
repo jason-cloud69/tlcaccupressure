@@ -529,6 +529,47 @@
   }
   .map-frame iframe{ width: 100%; height: 100%; min-height: 340px; border:0; }
 
+    /* ---------- HOLIDAY CLOSURES ---------- */
+  .closures{
+    margin-top: 26px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .closures summary{
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 2px;
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--purple-deep);
+  }
+  .closures summary::-webkit-details-marker{ display: none; }
+  .closures summary::after{
+    content: '';
+    width: 8px; height: 8px;
+    border-right: 2px solid var(--purple-deep);
+    border-bottom: 2px solid var(--purple-deep);
+    transform: rotate(45deg);
+    transition: transform 0.25s ease;
+    margin-right: 6px;
+  }
+  .closures[open] summary::after{ transform: rotate(-135deg); }
+  .closures-note{ font-size: 0.9rem; color: var(--brown-teak); margin: 0 2px 8px; }
+  #holidayList{ list-style: none; padding-bottom: 10px; }
+  #holidayList li{
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 2px;
+    border-top: 1px solid var(--line);
+    font-size: 0.95rem;
+  }
+  #holidayList li span:last-child{ font-weight: 600; color: var(--purple-deep); white-space: nowrap; }
+
   /* ---------- BOOKING ---------- */
   .booking{
     background: linear-gradient(160deg, var(--brown-teak), var(--purple-deep));
@@ -760,6 +801,12 @@
           <tr><td>Sunday</td><td>10:00 AM – 7:00 PM</td></tr>
         </table>
 
+                <details class="closures">
+          <summary>Closed on major holidays — view dates</summary>
+          <p class="closures-note">Closed on the following holidays every year:</p>
+          <ul id="holidayList"></ul>
+        </details>
+
         <div class="contact-block">
           <div class="contact-line">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z" stroke="#4B2E55" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="#4B2E55" stroke-width="1.6"/></svg>
@@ -876,6 +923,55 @@
   window.addEventListener('load', () => { toTop(); setTimeout(toTop, 150); });
   window.addEventListener('hashchange', () => { if (location.hash === '#policies') openPolicies(); });
   document.querySelectorAll('a[href="#policies"]').forEach(a => a.addEventListener('click', openPolicies));
+
+    // Holiday closures (calculated automatically each year)
+  function nthWeekday(y, m, wd, n){
+    const first = new Date(y, m, 1);
+    const offset = (wd - first.getDay() + 7) % 7;
+    return new Date(y, m, 1 + offset + (n - 1) * 7);
+  }
+  function lastWeekday(y, m, wd){
+    const last = new Date(y, m + 1, 0);
+    const offset = (last.getDay() - wd + 7) % 7;
+    return new Date(y, m + 1, 0 - offset);
+  }
+  function holidaysFor(y){
+    return [
+      ["New Year's Day", new Date(y, 0, 1)],
+      ["Martin Luther King Jr. Day", nthWeekday(y, 0, 1, 3)],
+      ["Presidents' Day", nthWeekday(y, 1, 1, 3)],
+      ["Memorial Day", lastWeekday(y, 4, 1)],
+      ["Juneteenth", new Date(y, 5, 19)],
+      ["Independence Day", new Date(y, 6, 4)],
+      ["Labor Day", nthWeekday(y, 8, 1, 1)],
+      ["Columbus Day", nthWeekday(y, 9, 1, 2)],
+      ["Veterans Day", new Date(y, 10, 11)],
+      ["Thanksgiving Day", nthWeekday(y, 10, 4, 4)],
+      ["Christmas Day", new Date(y, 11, 25)]
+    ];
+  }
+  (function renderClosures(){
+    const list = document.getElementById('holidayList');
+    if (!list) return;
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const y = today.getFullYear();
+    const seen = {};
+    const upcoming = holidaysFor(y).concat(holidaysFor(y + 1))
+      .filter(h => h[1] >= today)
+      .sort((a, b) => a[1] - b[1])
+      .filter(h => !seen[h[0]] && (seen[h[0]] = true));
+    upcoming.forEach(h => {
+      const li = document.createElement('li');
+      const name = document.createElement('span');
+      const date = document.createElement('span');
+      name.textContent = h[0];
+      const opts = { weekday: 'short', month: 'short', day: 'numeric' };
+      if (h[1].getFullYear() !== y) opts.year = 'numeric';
+      date.textContent = h[1].toLocaleDateString('en-US', opts);
+      li.appendChild(name); li.appendChild(date);
+      list.appendChild(li);
+    });
+  })();
 
   // Style explainer dropdown
   const styles = {
