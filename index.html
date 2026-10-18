@@ -868,7 +868,12 @@
     // Open Policies when linked to
   const policiesDetails = document.querySelector('.policies-details');
   function openPolicies(){ if (policiesDetails) policiesDetails.open = true; }
-  if (location.hash === '#policies') openPolicies();
+    // Always start at the top on load/reload
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  function toTop(){ window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }
+  toTop();
+  window.addEventListener('load', () => { toTop(); setTimeout(toTop, 150); });
   window.addEventListener('hashchange', () => { if (location.hash === '#policies') openPolicies(); });
   document.querySelectorAll('a[href="#policies"]').forEach(a => a.addEventListener('click', openPolicies));
 
