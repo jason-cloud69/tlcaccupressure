@@ -113,6 +113,19 @@
   }
   .btn-gold:hover{ background: var(--brown-teak); }
 
+    /* HIRING BAR — remove this rule and its HTML div together when no longer hiring */
+  .hiring-bar{
+    background: var(--cream-soft);
+    color: var(--purple-deep);
+    text-align: center;
+    font-size: 0.84rem;
+    font-weight: 500;
+    padding: 9px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hiring-bar a{ font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+  @media (max-width: 600px){ .hiring-bar{ font-size: 0.76rem; padding: 8px 12px; } }
+
   /* ---------- HEADER ---------- */
   .site-top{
     position: sticky;
@@ -609,6 +622,11 @@
     display:flex; justify-content: space-between; flex-wrap: wrap; gap:10px;
   }
 </style>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
@@ -633,6 +651,9 @@
     </div>
   </header>
 </div>
+
+<!-- HIRING BAR — delete this entire div when no longer hiring -->
+<div class="hiring-bar">We're hiring a Licensed Massage Therapist! Please email <a href="mailto:tlcaccupressure@gmail.com">tlcaccupressure@gmail.com</a> for more information.</div>
 
 <main id="top">
 
