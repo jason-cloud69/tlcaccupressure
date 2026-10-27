@@ -383,6 +383,33 @@
     border-radius: 4px;
   }
 
+    /* ---------- ENHANCEMENTS ---------- */
+  .enhancements-section{ padding-top: 0; }
+  .enhance-card{
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--cream-soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 8px 32px;
+    box-shadow: var(--shadow);
+  }
+  @media (max-width: 600px){ .enhance-card{ padding: 6px 20px; } }
+  .enhance-list{ list-style: none; }
+  .enhance-list li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .enhance-list li:last-child{ border-bottom: none; }
+  .e-name{ display: block; font-family: 'Fraunces', serif; font-size: 1.12rem; font-weight: 500; color: var(--purple-deep); }
+  .e-sub{ display: block; font-size: 0.9rem; color: var(--brown-teak); margin-top: 3px; }
+  .e-thai{ display: block; font-size: 0.85rem; color: var(--brown-teak); margin-top: 3px; }
+  .e-price{ font-weight: 600; color: var(--purple-deep); white-space: nowrap; font-size: 1.02rem; }
+
   /* ---------- ABOUT ---------- */
   .about{
     background: var(--purple-deep);
@@ -759,6 +786,41 @@
             <li><span>30 minutes</span><span>$50</span></li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ENHANCEMENTS -->
+  <section id="enhancements" class="enhancements-section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Optional Extras</p>
+        <h2>Enhancements</h2>
+        <p>Add any of these to your massage.</p>
+      </div>
+      <div class="enhance-card">
+        <ul class="enhance-list">
+          <li>
+            <div><span class="e-name">Aromatherapy</span></div>
+            <span class="e-price">$10</span>
+          </li>
+          <li>
+            <div><span class="e-name">Hot Oil</span></div>
+            <span class="e-price">$10</span>
+          </li>
+          <li>
+            <div>
+              <span class="e-name">Wang Prom</span>
+              <span class="e-thai" lang="th">สนุนไพรวังพรม ยาหม่องผสมเสลดผังพอน</span>
+              <span class="e-sub">Tiger Balm, Lemongrass or Original</span>
+            </div>
+            <span class="e-price">$10</span>
+          </li>
+          <li>
+            <div><span class="e-name">15-Minute Foot Massage</span></div>
+            <span class="e-price">$25</span>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
